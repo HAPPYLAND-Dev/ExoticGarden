@@ -169,7 +169,7 @@ public class PlantsListener implements Listener {
             e.setCancelled(true);
             for (Tree tree : ExoticGarden.getTrees()) {
                 if (item.getId().equalsIgnoreCase(tree.getSapling())) {
-                    Slimefun.getDatabaseManager().getBlockDataController().removeBlock(e.getLocation());
+                    Slimefun.getDatabaseManager().getBlockDataController(e.getWorld()).removeBlock(e.getLocation());
                     Schematic.pasteSchematic(e.getLocation(), tree, false);
                     return;
                 }
@@ -208,7 +208,7 @@ public class PlantsListener implements Listener {
                         }
                     }
 
-                    Slimefun.getDatabaseManager().getBlockDataController().removeBlock(e.getLocation());
+                    Slimefun.getDatabaseManager().getBlockDataController(e.getWorld()).removeBlock(e.getLocation());
                     BlockStorage.store(e.getLocation().getBlock(), berry.getItem());
                     e.getWorld().playEffect(e.getLocation(), Effect.STEP_SOUND, Material.OAK_LEAVES);
                     break;
@@ -411,7 +411,7 @@ public class PlantsListener implements Listener {
                     if (check == null) continue;
                     for (Tree tree : ExoticGarden.getTrees()) {
                         if (check.getId().equalsIgnoreCase(tree.getFruitID())) {
-                            Slimefun.getDatabaseManager().getBlockDataController().removeBlock(loc);
+                            Slimefun.getDatabaseManager().getBlockDataController(loc.getWorld()).removeBlock(loc);
                             ItemStack fruits = check.getItem();
                             fruit.getWorld().playEffect(loc, Effect.STEP_SOUND, Material.OAK_LEAVES);
                             fruit.getWorld().dropItemNaturally(loc, fruits);

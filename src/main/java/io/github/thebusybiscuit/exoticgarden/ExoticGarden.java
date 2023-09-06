@@ -380,7 +380,7 @@ public class ExoticGarden extends JavaPlugin implements SlimefunAddon {
 
         for (Berry berry : getBerries()) {
             if (item.getId().equalsIgnoreCase(berry.getID())) {
-                var controller = Slimefun.getDatabaseManager().getBlockDataController();
+                var controller = Slimefun.getDatabaseManager().getBlockDataController(block.getWorld());
                 switch (berry.getType()) {
                     case ORE_PLANT, DOUBLE_PLANT -> {
                         Block plant = block;
@@ -420,7 +420,7 @@ public class ExoticGarden extends JavaPlugin implements SlimefunAddon {
         }
 
         if (treeFruits.contains(check.getId())) {
-            Slimefun.getDatabaseManager().getBlockDataController().removeBlock(loc);
+            Slimefun.getDatabaseManager().getBlockDataController(fruit.getWorld()).removeBlock(loc);
             ItemStack fruits = check.getItem().clone();
             fruit.getWorld().playEffect(loc, Effect.STEP_SOUND, Material.OAK_LEAVES);
             fruit.getWorld().dropItemNaturally(loc, fruits);

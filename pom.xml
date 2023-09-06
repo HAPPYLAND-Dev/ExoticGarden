@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.thebusybiscuit</groupId>
     <artifactId>ExoticGarden</artifactId>
-    <version>UNOFFICIAL</version>
+    <version>1.0.1</version>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
@@ -110,9 +110,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.github.StarWishsama</groupId>
+            <groupId>com.github.HAPPYLAND-Dev</groupId>
             <artifactId>Slimefun4</artifactId>
-            <version>2023.06</version>
+            <version>063146262b</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
