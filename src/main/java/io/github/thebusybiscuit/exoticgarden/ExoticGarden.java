@@ -64,6 +64,7 @@ import java.util.logging.Level;
 public class ExoticGarden extends JavaPlugin implements SlimefunAddon {
 
     public static ExoticGarden instance;
+    public static List<ItemStack> fromGrass;
 
     private final File schematicsFolder = new File(getDataFolder(), "schematics");
 
@@ -272,6 +273,7 @@ public class ExoticGarden extends JavaPlugin implements SlimefunAddon {
         trees.add(tree);
 
         SlimefunItemStack sapling = new SlimefunItemStack(id + "_SAPLING", Material.OAK_SAPLING, color + name + "树苗");
+        fromGrass.add(sapling);
 
         items.put(id + "_SAPLING", sapling);
 
@@ -313,6 +315,7 @@ public class ExoticGarden extends JavaPlugin implements SlimefunAddon {
         berries.add(berry);
 
         SlimefunItemStack sfi = new SlimefunItemStack(upperCase + "_BUSH", Material.OAK_SAPLING, color + name + "灌木丛");
+        fromGrass.add(sfi);
 
         items.put(upperCase + "_BUSH", sfi);
 
@@ -343,6 +346,7 @@ public class ExoticGarden extends JavaPlugin implements SlimefunAddon {
         berries.add(berry);
 
         SlimefunItemStack bush = new SlimefunItemStack(enumStyle + "_BUSH", Material.OAK_SAPLING, color + name + "植物");
+        fromGrass.add(bush);
         items.put(upperCase + "_BUSH", bush);
 
         new BonemealableItem(mainItemGroup, bush, ExoticGardenRecipeTypes.BREAKING_GRASS, new ItemStack[] { null, null, null, null, new ItemStack(Material.GRASS), null, null, null, null })
