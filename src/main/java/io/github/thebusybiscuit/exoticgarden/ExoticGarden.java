@@ -30,6 +30,7 @@ import io.github.thebusybiscuit.slimefun4.libraries.dough.skins.PlayerSkin;
 import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
+import me.xiaozhangup.recipe.loader.RecipeLoader;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
@@ -103,6 +104,7 @@ public class ExoticGarden extends JavaPlugin implements SlimefunAddon {
         //        }
 
         registerItems();
+        RecipeLoader.INSTANCE.getBreakDrops().put(Material.GRASS, fromGrass);
 
         new AndroidListener(this);
         new PlantsListener(this);
