@@ -64,7 +64,7 @@ import java.util.logging.Level;
 public class ExoticGarden extends JavaPlugin implements SlimefunAddon {
 
     public static ExoticGarden instance;
-    public static List<ItemStack> fromGrass;
+    public static List<ItemStack> fromGrass = new ArrayList<>();
 
     private final File schematicsFolder = new File(getDataFolder(), "schematics");
 
